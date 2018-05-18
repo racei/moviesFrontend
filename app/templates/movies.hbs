@@ -1,4 +1,19 @@
 {{outlet}}
-{{#each model as |movie|}}
-    {{movie.title}}
-{{/each}}
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Length</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each model as |movie|}}
+        <tr>
+            <td>{{movie.title}}</td>
+            <td>{{movie.yearReleased}}</td>
+            <td>{{movie.length}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
