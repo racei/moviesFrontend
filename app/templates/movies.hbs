@@ -15,5 +15,11 @@
             <td>{{movie.length}}</td>
         </tr>
         {{/each}}
+        <tr>
+            <td>{{input value=title placeholder="Title"}}</td>
+            <td>{{input value=yearReleased placeholder="Year"}}</td>
+            <td>{{input value=length placeholder="Length"}}</td>
+            <button {{action "addMovie"}}>+</button>
+        </tr>
     </tbody>
 </table>
