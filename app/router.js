@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('Movies');
+  this.route('Users');
 });
 
 export default Router;
