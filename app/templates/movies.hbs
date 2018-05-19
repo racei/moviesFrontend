@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         {{#each model as |movieRecord|}}
-            {{movie-listing movie=movieRecord}}
+            {{movie-listing title=movieRecord.title yearReleased=movieRecord.yearReleased length=movieRecord.length id=movieRecord.id}}
         {{/each}}
         <tr>
             <td>{{input value=title placeholder="Title"}}</td>
