@@ -1,4 +1,5 @@
 {{outlet}}
 {{#each model as |User|}}
-    {{User.name}}
+    <div>{{User.name}}</div>
 {{/each}}
+<div>{{input value=name placeholder="User name"}}<button {{ action "addUser"}}>+</button></div>
