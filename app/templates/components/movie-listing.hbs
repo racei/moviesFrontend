@@ -1,5 +1,12 @@
-<td>{{movie.title}}</td>
-<td>{{movie.yearReleased}}</td>
-<td>{{movie.length}}</td>
+{{#if editing}}
+    <td>{{input value=title placeholder="Title"}}</td>
+    <td>{{input value=yearReleased placeholder="Year"}}</td>
+    <td>{{input value=length placeholder="Length"}}</td>
+    <button {{action "addMovie"}}>+</button>
+{{else}}
+    <td>{{movie.title}}</td>
+    <td>{{movie.yearReleased}}</td>
+    <td>{{movie.length}}</td>
+{{/if}}
 <button {{action "deleteMovie" movie.id}}>X</button>
 <button {{action "editMovie"}}>Edit</button>

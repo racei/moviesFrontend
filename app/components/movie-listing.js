@@ -2,6 +2,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
     tagName: 'tr',
+    editing: false,
     store: Ember.inject.service(),
     actions:{
         deleteMovie(id){
@@ -9,6 +10,10 @@ export default Component.extend({
                 movie.deleteRecord();
                 movie.save();
             })
+        },
+        editMovie(id){
+            this.toggleProperty('editing');
+
         }
     }
 });
