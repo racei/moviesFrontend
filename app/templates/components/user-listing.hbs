@@ -1,0 +1,8 @@
+{{#if editing}}
+    {{input value=name}}
+    <button {{action "saveUser" id}}>Save</button>
+{{else}}
+    {{name}}
+    <button {{action "editUser"}}>Edit</button>
+{{/if}}
+<button {{action "deleteUser" id}}>X</button>
