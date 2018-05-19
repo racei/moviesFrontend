@@ -8,13 +8,8 @@
         </tr>
     </thead>
     <tbody>
-        {{#each model as |movie|}}
-        <tr>
-            <td>{{movie.title}}</td>
-            <td>{{movie.yearReleased}}</td>
-            <td>{{movie.length}}</td>
-            <button {{action "deleteMovie" movie.id}}>X</button>
-        </tr>
+        {{#each model as |movieRecord|}}
+            {{movie-listing movie=movieRecord}}
         {{/each}}
         <tr>
             <td>{{input value=title placeholder="Title"}}</td>
