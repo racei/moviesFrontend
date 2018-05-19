@@ -8,6 +8,9 @@ export default Controller.extend({
     actions:{
         addMovie(){
             let newMovie = this.get('store').createRecord('movie',{title:this.title, yearReleased:this.yearReleased, length:this.length});
+            this.set('title', '');
+            this.set('yearReleased', '');
+            this.set('length', '');
             newMovie.save();
         },
         deleteMovie(id){
