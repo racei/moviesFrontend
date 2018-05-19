@@ -6,6 +6,7 @@ export default Controller.extend({
         addUser(){
             let newUser = this.get('store').createRecord('user',{name:this.name});
             newUser.save();
+            this.set('name', '');
         }
     }
 });
