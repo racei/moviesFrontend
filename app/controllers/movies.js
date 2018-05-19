@@ -10,14 +10,8 @@ export default Controller.extend({
             let newMovie = this.get('store').createRecord('movie',{title:this.title, yearReleased:this.yearReleased, length:this.length});
             this.set('title', '');
             this.set('yearReleased', '');
-            this.set('length', '');
+            this.set('length', '')
             newMovie.save();
         },
-        deleteMovie(id){
-            this.get('store').findRecord('movie', id).then(function(movie){
-                movie.deleteRecord();
-                movie.save();
-            })
-        }
     }
 });
