@@ -4,6 +4,6 @@ export default DS.Model.extend({
     title: DS.attr('string'),
     yearReleased: DS.attr('number'),
     length: DS.attr('string'),
-    tags: DS.hasMany('user')
+    usersWatched: DS.hasMany('user'),
 
 });
