@@ -8,10 +8,11 @@
     <td>{{yearReleased}}</td>
     <td>{{length}}</td>
     <td>
-        {{#each usersWatched as |user|}}
-            Name:{{user.name}}
-
-        {{/each}}
+        <ul>
+            {{#each usersWatched as |user|}}
+                <li>{{user.name}}</li>
+            {{/each}}
+        </ul>
     </td>
     <button {{action "editMovie"}}>Edit</button>
 {{/if}}
