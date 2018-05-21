@@ -7,6 +7,7 @@ export default Component.extend({
     title: '',
     yearReleased: '',
     length: '',
+    "usersWatched": [],
     store: service(),
     actions:{
         deleteMovie(id){
