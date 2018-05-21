@@ -4,10 +4,7 @@ import {inject as service} from '@ember/service';
 export default Component.extend({
     tagName: 'tr',
     editing: false,
-    title: '',
-    yearReleased: '',
-    length: '',
-    "usersWatched": [],
+    movie: null,
     store: service(),
     actions:{
         deleteMovie(id){
@@ -20,17 +17,16 @@ export default Component.extend({
             this.toggleProperty('editing');
 
         },
-        saveMovie(id){
-            let title = this.get('title');
-            let yearReleased = this.get('yearReleased');
-            let length = this.get('length');
-            this.get('store').findRecord('movie', id).then(function(movie){
-                movie.set('title', title);
-                movie.set('yearReleased', yearReleased);
-                movie.set('length', length);
-                movie.save();
-            })
+        saveMovie(movie){
+            movie.save();
             this.toggleProperty('editing');
+        },
+        removeUserFromMovie(movie, user){
+                movie.get('usersWatched').removeObject(user);
+                movie.save();
+        },
+        addUserToMovie(movie){
+
         }
 
 
