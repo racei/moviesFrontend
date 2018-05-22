@@ -1,15 +1,10 @@
 {{outlet}}
+{{#each movies as |movieRecord|}} 
+    {{movie-listing movie=movieRecord users=users}}
+{{/each}}
 <table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Length</th>
-            <th>Viewers</th>
-        </tr>
-    </thead>
     <tbody>
-        {{#each movies as |movieRecord|}} {{movie-listing movie=movieRecord users=users}} {{/each}}
+
         <tr>
             <td>{{input value=title placeholder="Title"}}</td>
             <td>{{input value=yearReleased placeholder="Year"}}</td>

@@ -1,33 +1,30 @@
 {{#if editing}}
-    <td>{{input value=movie.title}}</td>
-    <td>{{input value=movie.yearReleased}}</td>
-    <td>{{input value=movie.length}}</td>
-    <td>
-        <ul>
-            {{#each movie.usersWatched as |user|}}
-                <li>
-                    {{user.name}}<button {{action "removeUserFromMovie" movie user}}>X</button>
-                </li>
-            {{/each}}
-        </ul>
-        <select >
-            {{#each users as |user|}}
-                <option {{action "addUserToMovie" movie user}}value={{user.id}}>{{user.name}}</option>
-            {{/each}}
-        </select>
-    </td>
+    <div>{{input value=movie.title}}</div>
+    <div>{{input value=movie.yearReleased}}</div>
+    <div>{{input value=movie.length}}</div>
+    <ul>
+        {{#each movie.usersWatched as |user|}}
+            <li>
+                {{user.name}}<button {{action "removeUserFromMovie" movie user}}>X</button>
+            </li>
+        {{/each}}
+    </ul>
+    <select >
+        {{#each users as |user|}}
+            <option {{action "addUserToMovie" movie user}}value={{user.id}}>{{user.name}}</option>
+        {{/each}}
+    </select>
     <button {{action "saveMovie" movie}}>Save</button>
 {{else}}
-    <td>{{movie.title}}</td>
-    <td>{{movie.yearReleased}}</td>
-    <td>{{movie.length}}</td>
-    <td>
-        <ul>
-            {{#each movie.usersWatched as |user|}}
-                <li>{{user.name}}</li>
-            {{/each}}
-        </ul>
-    </td>
+    <h1>{{movie.title}}</h1>
+    <div>Released: {{movie.yearReleased}}</div>
+    <div>Length {{time-formatter movie.length}}</div>
+    Watched by:
+    <ul>
+        {{#each movie.usersWatched as |user|}}
+            <li>{{user.name}}</li>
+        {{/each}}
+    </ul>
     <button {{action "editMovie"}}>Edit</button>
 {{/if}}
 <button {{action "deleteMovie" movie.id}}>X</button>
