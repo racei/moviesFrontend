@@ -10,6 +10,11 @@
                 </li>
             {{/each}}
         </ul>
+        <select >
+            {{#each users as |user|}}
+                <option {{action "addUserToMovie" movie user}}value={{user.id}}>{{user.name}}</option>
+            {{/each}}
+        </select>
     </td>
     <button {{action "saveMovie" movie}}>Save</button>
 {{else}}

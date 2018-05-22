@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each model as |movieRecord|}} {{movie-listing movie=movieRecord}} {{/each}}
+        {{#each movies as |movieRecord|}} {{movie-listing movie=movieRecord users=users}} {{/each}}
         <tr>
             <td>{{input value=title placeholder="Title"}}</td>
             <td>{{input value=yearReleased placeholder="Year"}}</td>

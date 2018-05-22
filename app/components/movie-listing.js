@@ -5,6 +5,7 @@ export default Component.extend({
     tagName: 'tr',
     editing: false,
     movie: null,
+    users: null,
     store: service(),
     actions:{
         deleteMovie(id){
@@ -25,7 +26,10 @@ export default Component.extend({
                 movie.get('usersWatched').removeObject(user);
                 movie.save();
         },
-        addUserToMovie(movie){
+        addUserToMovie(movie, user){
+            movie.get('usersWatched').addObject(user);
+            movie.save();
+
 
         }
 
