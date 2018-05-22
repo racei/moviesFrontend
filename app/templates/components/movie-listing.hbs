@@ -16,13 +16,14 @@
     </select>
     <button {{action "saveMovie" movie}}>Save</button>
 {{else}}
-    <h1>{{movie.title}}</h1>
-    <div>Released: {{movie.yearReleased}}</div>
+    <h1>{{movie.title}} <small>({{movie.yearReleased}})</small></h1>
     <div>Length {{time-formatter movie.length}}</div>
     Watched by:
     <ul>
         {{#each movie.usersWatched as |user|}}
             <li>{{user.name}}</li>
+        {{else}}
+            No one yet...
         {{/each}}
     </ul>
     <button {{action "editMovie"}}>Edit</button>
