@@ -1,11 +1,9 @@
 {{outlet}}
-<div class="container">
-    {{#each movies as |movieRecord|}} 
-        <div class="row">
-            {{movie-listing movie=movieRecord users=users}}
-        </div>
-    {{/each}}
-</div>
+{{#each movies as |movieRecord|}} 
+    <div class="row">
+        {{movie-listing movie=movieRecord users=users class="col-md-8"}}
+    </div>
+{{/each}}
 <table>
     <tbody>
 
