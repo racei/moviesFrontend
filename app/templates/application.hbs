@@ -1,3 +1,13 @@
-<div>{{#link-to "movies" class="button"}}List of Movies{{/link-to}}</div>
-<div>{{#link-to "users" class="button"}}List of Users{{/link-to}}</div>
+{{#bs-navbar as |navbar|}}
+ {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}
+        {{#nav.link-to "movies"}}Movies{{/nav.link-to}}
+      {{/nav.item}}
+      {{#nav.item}}
+        {{#nav.link-to "users"}}Users{{/nav.link-to}}
+      {{/nav.item}}
+    {{/navbar.nav}}
+  {{/navbar.content}}
+{{/bs-navbar}}
 {{outlet}}
