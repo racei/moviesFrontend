@@ -1,8 +1,8 @@
 {{#if editing}}
-    <td>{{input value=name}}</td>
-    <td><button {{action "saveUser" id}}>Save</button></td>
+    {{input value=name}}
+    <button class="btn btn-primary" {{action "saveUser" id}}>Save</button>
+    <button class="btn btn-danger"{{action "deleteUser" id}}>Delete User</button>
 {{else}}
-    <td>{{name}}</td>
-    <td><button {{action "editUser"}}>Edit</button></td>
+    {{name}}
+    <button class="btn btn-primary" {{action "editUser"}}>Edit</button>
 {{/if}}
-<td><button {{action "deleteUser" id}}>X</button></td>

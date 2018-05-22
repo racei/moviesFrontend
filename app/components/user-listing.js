@@ -4,7 +4,6 @@ import {inject as service} from '@ember/service';
 export default Component.extend({
     name: '',
     editing: false,
-    tagName: 'tr',
     store: service(),
     actions:{
         deleteUser(id){
